@@ -1,0 +1,33 @@
+<div class="container">
+
+  <div ng-if="isAuthenticated()">
+    <div class="row">
+      <div ng-repeat="photo in photos" class="col-lg-2 col-sm-3 col-xs-4">
+        <div class="panel panel-body">
+          <div class="caption">
+              <h5><a href="user/{{photo.author}}">{{photo.author}}</a></h5> 
+              <p>{{photo.description}}</p> 
+              <h6 class="text-muted"><i class="ion-clock"></i> {{photo.modified}}</h6>
+              <a href="#/feed/{{photo._id}}">
+                <div class="image">
+              <img ng-src="{{photo.images[0].url}}" class="thumbnail img-responsive"/>
+            </div>
+              </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div ng-if="!isAuthenticated()">
+    <div class="jumbotron">
+      <h2><i class="ion-tshirt"></i> StyleMe</h2>
+      <h3><p><strong>StyleMe</strong> is a site and mobile app that let's you crowdsource fashion advice.</p></h3>
+      <h5><ol><li>Take a picture</li><li>Load it to the feed</li><li>get instant feedback</li></ol>
+      <p></h5>
+        <a class="btn btn-lg btn-success" href="#/login"><i class="ion-log-in"></i> Log in</a>
+        <a class="btn btn-lg btn-primary" href="#/signup"><i class="ion-person-add"></i> Create account</a>
+      </p>
+    </div>
+  </div>
+
+</div>
