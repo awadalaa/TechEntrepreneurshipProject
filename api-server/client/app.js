@@ -1,4 +1,4 @@
-angular.module('Instagram', ['ngRoute', 'ngMessages','mgcrea.ngStrap'])
+angular.module('Instagram', ['ngRoute', 'ngMessages','mgcrea.ngStrap','akoenig.deckgrid'])
   .config(function($routeProvider) {
     $routeProvider
       .when('/', {
@@ -22,8 +22,6 @@ angular.module('Instagram', ['ngRoute', 'ngMessages','mgcrea.ngStrap'])
     $httpProvider.interceptors.push(function ($rootScope, $q, $window, $location) {
       return {
         request: function(config) {
-          console.log('here');
-          console.log($window.sessionStorage.token);
           if ($window.sessionStorage.token) {
             config.headers.Authorization = 'Bearer ' + $window.sessionStorage.token;
           }

@@ -15,6 +15,5 @@ angular.module('Instagram')
     };
 
     $scope.currentUser = {};
-	$scope.currentUser.username = $rootScope.loggedInUser
-	$scope.currentUser.picture = './tests/face.png';
+	  $scope.currentUser.username = $rootScope.loggedInUser
   });

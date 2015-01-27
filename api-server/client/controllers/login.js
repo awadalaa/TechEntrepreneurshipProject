@@ -18,8 +18,6 @@ angular.module('Instagram')
             },
             data: oauthObj
       }).success(function (data, status, headers, config) {
-            console.log('status',status);
-            console.log('data',data);
           $window.sessionStorage.token = data.access_token;
           $alert({
             //title: 'Cheers!',

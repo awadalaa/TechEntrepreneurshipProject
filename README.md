@@ -21,6 +21,7 @@ mongod --dbpath ~/Data/db/pathToStoreMongoDocuments
 git clone https://github.com/awadalaa/TechEntrepreneurshipProject.git # or clone your own fork
 cd TechEntrepreneurshipProject/api-server/
 npm install
+node dataGen
 npm start
 ```
 

@@ -1,19 +1,15 @@
+ 
 <div class="container">
-
+  
   <div ng-if="isAuthenticated()">
-    <div class="row">
-      <div ng-repeat="photo in photos" class="col-lg-2 col-sm-3 col-xs-4">
-        <div class="panel panel-body">
-          <div class="caption">
-              <h5><a href="user/{{photo.author}}">{{photo.author}}</a></h5> 
-              <p>{{photo.description}}</p> 
-              <h6 class="text-muted"><i class="ion-clock"></i> {{photo.modified}}</h6>
-              <a href="#/feed/{{photo._id}}">
-                <div class="image">
-              <img ng-src="{{photo.images[0].url}}" class="thumbnail img-responsive"/>
-            </div>
-              </a>
-        </div>
+    <div class="card">
+      <div deckgrid class="deckgrid" source="photos">
+          <div class="a-card">
+                      <a href="#/feed/{{card._id}}"><img ng-src="{{card.images[0].url}}" class="thumbnail img-responsive"/></a>
+                      <h5><a href="#">{{card.author}}</a></h5> 
+                      <p>{{card.description}}</p> 
+                      <h6 class="text-muted"><i class="ion-clock"></i> {{card.modified | date: 'short'}}</h6>
+          </div>
       </div>
     </div>
   </div>
